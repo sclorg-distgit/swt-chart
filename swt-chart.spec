@@ -13,6 +13,8 @@ URL:            http://www.swtchart.org/
 # tar -cJf %%{pkg_name}-%%{version}.tar.xz %%{pkg_name}-%%{version}
 Source0:        %{pkg_name}-%{version}.tar.xz
 
+Patch0:         %{pkg_name}-disable-doclint.patch
+
 BuildArch:      noarch
 
 BuildRequires:  %{?scl_prefix}tycho >= 0.14.0
@@ -33,7 +35,7 @@ Summary:        Javadoc for %{pkg_name}
 %setup -q -n %{pkg_name}-%{version}
 # Create the poms
 xmvn -o org.eclipse.tycho:tycho-pomgenerator-plugin:generate-poms -DgroupId=org.swtchart
-
+%patch0 -p1
 %{?scl:EOF}
 
 %build
