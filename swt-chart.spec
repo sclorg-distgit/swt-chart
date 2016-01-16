@@ -3,7 +3,7 @@
 %{?java_common_find_provides_and_requires}
 Name:           %{?scl_prefix}swt-chart
 Version:        0.9.0
-Release:        5.1.bs2%{?dist}
+Release:        5.1%{?dist}
 Summary:        SWTChart Feature
 
 License:        EPL
